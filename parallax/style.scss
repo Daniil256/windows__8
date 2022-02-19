@@ -1,0 +1,81 @@
+@import "_null_style";
+
+.page {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+.parallax {
+    position: relative;
+    height: 100%;
+
+    .par__ef {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+    }
+
+    .par__ef1 {
+        background: url("m_1.png") 0 0 / cover no-repeat;
+    }
+
+    .par__ef2 {
+        z-index: 1;
+        background: url("m_2.png") bottom right / 45% no-repeat;
+    }
+
+    .par__ef3 {
+        z-index: 1;
+        background: url("m_3.png") bottom left / 100% no-repeat;
+    }
+
+    .par__fog {
+        background: url("fog_1.png") bottom / 100% no-repeat;
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        z-index: 2;
+    }
+}
+.content {
+    position: relative;
+    &__body {
+        max-width: 1170px;
+        margin: 0 auto;
+        text-align: justify;
+        font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+        text-shadow: 1px 1px 1px rgb(58, 58, 58);
+        font-variant: small-caps;
+    }
+
+    &__header {
+        text-align: center;
+        text-transform: uppercase;
+        margin-bottom: 20px;
+        font-weight: 900;
+    }
+
+    &__title {
+        font-size: 200px;
+    }
+
+    &__subtitle {
+        font-size: 100px;
+    }
+}
+.arcticle {
+    font-size: 20px;
+    background-color: #ffffff7a;
+    padding: 30px;
+    line-height: 1.2;
+
+    p {
+        margin-bottom: 20px;
+    }
+}

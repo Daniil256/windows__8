@@ -1,0 +1,180 @@
+@import "_null_style";
+
+.wrapper {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: #eee;
+}
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 50;
+
+    &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #571f2c;
+        z-index: 2;
+    }
+    &__body {
+        display: flex;
+        justify-content: space-between;
+        position: relative;
+        height: 80px;
+        align-items: center;
+    }
+
+    &__logo {
+        flex: 0 0 60px;
+        border-radius: 50%;
+        overflow: hidden;
+        position: relative;
+        z-index: 3;
+        & img {
+            max-width: 100%;
+            display: block;
+        }
+    }
+    &__list {
+        display: flex;
+        position: relative;
+        z-index: 2;
+        & li {
+            list-style: none;
+            margin: 0 0 0 20px;
+        }
+    }
+
+    &__link {
+        text-transform: uppercase;
+        color: #eee;
+        font-size: 16px;
+        text-decoration: none;
+    }
+
+    &__burger {
+        display: none;
+    }
+    @media (max-width: 767px) {
+        &__body {
+            height: 50px;
+        }
+        &__logo {
+            flex: 0 0 40px;
+        }
+        &__burger {
+            display: block;
+            position: relative;
+            width: 30px;
+            height: 20px;
+            z-index: 3;
+            & span {
+                width: 100%;
+                height: 2px;
+                position: absolute;
+                background-color: #eee;
+                left: 0;
+                top: 9px;
+                transition: 0.5s all ease 0s;
+            }
+            & ::before,
+            :after {
+                content: "";
+                width: 100%;
+                position: absolute;
+                background-color: #eee;
+                height: 2px;
+                left: 0;
+                transition: 0.5s all ease 0s;
+            }
+            & ::before {
+                bottom: 9px;
+            }
+            & ::after {
+                top: 9px;
+            }
+
+            &.active ::before {
+                transform: rotate(45deg);
+                bottom: 0;
+            }
+            &.active ::after {
+                transform: rotate(-45deg);
+                top: 0;
+            }
+            &.active span {
+                background-color: #571f2c;
+            }
+        }
+
+        &__menu {
+            position: fixed;
+            left: 0;
+            top: -100%;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: #1f2557;
+            padding: 70px 10px 20px 10px;
+            transition: 0.7s ease all 0s;
+            &.active {
+                top: -10%;
+            }
+        }
+
+        &__list {
+            display: flex;
+            flex-direction: column;
+            margin-top: 60px;
+            height: 70%;
+            width: 100%;
+            & li {
+                display: block;
+                height: 100%;
+                width: 100%;
+                margin: 0;
+                & a {
+                    display: flex;
+                    align-items: center;
+                    height: 100%;
+                    width: 100%;
+                    padding: 5px;
+                    &:hover {
+                        background-color: #eee;
+                        color: #1f2557;
+                    }
+                }
+            }
+        }
+    }
+}
+.container {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 0 10px;
+}
+.content {
+    padding-top: 100px;
+    &__text {
+        font-size: 20px;
+        line-height: 1.4;
+        text-shadow: 1px 1px 1px #bbb;
+        text-align: justify;
+        & p {
+            margin: 0 0 20px 0;
+        }
+    }
+}
+@media (max-width: 767px) {
+    .content {
+        padding-top: 60px;
+    }
+    .lock {
+        overflow: hidden;
+    }
+}

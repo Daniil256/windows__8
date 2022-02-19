@@ -1,0 +1,124 @@
+@import "_null_style";
+body {
+    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+    padding: 50px;
+    font-weight: 900;
+    text-shadow: 1px 1px 1px #888;
+    background-color: #eee;
+    .block {
+        &__form {
+            &__title {
+                font-size: 40px;
+                margin-bottom: 20px;
+            }
+            &__input {
+                margin-bottom: 15px;
+            }
+        }
+    }
+    .checkbox {
+        font-size: 20px;
+        line-height: 20px;
+        padding: 0 0 0 70px;
+        position: relative;
+        cursor: pointer;
+        transition: all 0.3s ease 0s;
+        color: #666;
+        & input {
+            display: none;
+        }
+        &::before {
+            content: "";
+            width: 50px;
+            height: 20px;
+            border-radius: 20px;
+            position: absolute;
+            left: 0;
+            top: 0;
+            box-shadow: 0 0 3px rgba(18, 18, 18, 0.664);
+            background-color: #666;
+        }
+        &::after {
+            content: "";
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            left: 0;
+            top: -5px;
+            position: absolute;
+            box-shadow: 0 0 3px rgba(19, 19, 19, 0.664);
+            background-color: #666;
+            transition: all 0.3s ease 0s;
+        }
+        &.active {
+            color: #000;
+        }
+        &.active::before {
+            background-color: #259938;
+        }
+        &.active::after {
+            background-color: #259938;
+            left: 25px;
+        }
+    }
+    .rbtn {
+        &__item {
+            & input {
+                display: none;
+            }
+            position: relative;
+            padding: 0 0 0 50px;
+            font-size: 16px;
+            color: #666;
+            transition: 0.2s ease all 0s;
+            margin-bottom: 20px;
+            line-height: 30px;
+            cursor: pointer;
+            &::before {
+                content: "";
+                width: 30px;
+                height: 30px;
+                left: 0;
+                top: 0;
+                position: absolute;
+                background-color: #666;
+                border-radius: 50%;
+                box-shadow: 0 0 3px rgba(19, 19, 19, 0.664);
+            }
+            &::after {
+                content: "";
+                position: absolute;
+                left: 5px;
+                top: 5px;
+                width: 20px;
+                height: 20px;
+                border-radius: 50%;
+                background-color: #259938;
+                transition: 0.2s ease all 0s;
+                transform: scale(0);
+            }
+            &.active::after {
+                transform: scale(1);
+            }
+            &.active {
+                color: #000;
+            }
+        }
+    }
+    .button {
+        font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+        font-weight: 900;
+        text-shadow: 1px 1px 1px #bbb;
+        display: inline-block;
+        cursor: pointer;
+        position: relative;
+        height: 44px;
+        width: 204px;
+        border: 2px solid rgb(0, 0, 0);
+
+        font-size: 14px;
+        &:active {
+            background-color: #fff;
+        }
+    }
+}

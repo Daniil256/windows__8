@@ -1,0 +1,230 @@
+* {
+  padding: 0;
+  border: 0;
+  margin: 0;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+:focus,
+:active {
+  outline: none;
+}
+
+a:focus,
+a:active {
+  outline: none;
+}
+
+nav,
+footer,
+header,
+aside {
+  display: block;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  line-height: 1;
+  font-size: 14px;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+input,
+button,
+textarea {
+  font-family: inherit;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+button::-moz-focus-inner- {
+  padding: 0;
+  border: 0;
+}
+
+a,
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+ul li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: 400;
+}
+
+body {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+  padding: 50px;
+  font-weight: 900;
+  text-shadow: 1px 1px 1px #888;
+  background-color: #eee;
+}
+
+body .block__form__title {
+  font-size: 40px;
+  margin-bottom: 20px;
+}
+
+body .block__form__input {
+  margin-bottom: 15px;
+}
+
+body .checkbox {
+  font-size: 20px;
+  line-height: 20px;
+  padding: 0 0 0 70px;
+  position: relative;
+  cursor: pointer;
+  -webkit-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+  color: #666;
+}
+
+body .checkbox input {
+  display: none;
+}
+
+body .checkbox::before {
+  content: "";
+  width: 50px;
+  height: 20px;
+  border-radius: 20px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  -webkit-box-shadow: 0 0 3px rgba(18, 18, 18, 0.664);
+          box-shadow: 0 0 3px rgba(18, 18, 18, 0.664);
+  background-color: #666;
+}
+
+body .checkbox::after {
+  content: "";
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  left: 0;
+  top: -5px;
+  position: absolute;
+  -webkit-box-shadow: 0 0 3px rgba(19, 19, 19, 0.664);
+          box-shadow: 0 0 3px rgba(19, 19, 19, 0.664);
+  background-color: #666;
+  -webkit-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+}
+
+body .checkbox.active {
+  color: #000;
+}
+
+body .checkbox.active::before {
+  background-color: #259938;
+}
+
+body .checkbox.active::after {
+  background-color: #259938;
+  left: 25px;
+}
+
+body .rbtn__item {
+  position: relative;
+  padding: 0 0 0 50px;
+  font-size: 16px;
+  color: #666;
+  -webkit-transition: 0.2s ease all 0s;
+  transition: 0.2s ease all 0s;
+  margin-bottom: 20px;
+  line-height: 30px;
+  cursor: pointer;
+}
+
+body .rbtn__item input {
+  display: none;
+}
+
+body .rbtn__item::before {
+  content: "";
+  width: 30px;
+  height: 30px;
+  left: 0;
+  top: 0;
+  position: absolute;
+  background-color: #666;
+  border-radius: 50%;
+  -webkit-box-shadow: 0 0 3px rgba(19, 19, 19, 0.664);
+          box-shadow: 0 0 3px rgba(19, 19, 19, 0.664);
+}
+
+body .rbtn__item::after {
+  content: "";
+  position: absolute;
+  left: 5px;
+  top: 5px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #259938;
+  -webkit-transition: 0.2s ease all 0s;
+  transition: 0.2s ease all 0s;
+  -webkit-transform: scale(0);
+          transform: scale(0);
+}
+
+body .rbtn__item.active::after {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+
+body .rbtn__item.active {
+  color: #000;
+}
+
+body .button {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+  font-weight: 900;
+  text-shadow: 1px 1px 1px #bbb;
+  display: inline-block;
+  cursor: pointer;
+  position: relative;
+  height: 44px;
+  width: 204px;
+  border: 2px solid black;
+  font-size: 14px;
+}
+
+body .button:active {
+  background-color: #fff;
+}
