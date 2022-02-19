@@ -1,0 +1,917 @@
+@import "_null_style";
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap");
+body {
+    color: #eee;
+    height: 100%;
+    width: 100%;
+    user-select: none;
+    background-color: #111;
+    transition: 0.5s linear 0s;
+}
+
+// ОБОИ
+.wallaper {
+    width: 100%;
+    min-height: 100%;
+    transition: 0.5s linear 0s;
+    background: none;
+}
+
+.wrapper {
+    font-family: "Quicksand", sans-serif;
+    font-size: 24px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+    width: 95%;
+    margin: 0 auto;
+    @media (max-width: 768px) {
+        width: 100%;
+    }
+}
+// ШАПКА
+.header {
+    margin: 50px 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    @media (max-width: 768px) {
+        margin: 10px;
+    }
+    &__title {
+        font-size: 70px;
+        font-weight: 900;
+        @media (max-width: 768px) {
+            padding-top: 50px;
+        }
+    }
+    @media (max-width: 768px) and (orientation: landscape) {
+        margin: 20px 10px;
+    }
+    @media (max-width: 768px) {
+        flex-direction: column-reverse;
+        align-items: flex-start;
+    }
+    // МЕНЮ
+    &__menu {
+        width: 600px;
+        height: 50px;
+        display: flex;
+        flex-direction: row;
+        justify-content: end;
+        @media (max-width: 768px) {
+            width: 250px;
+            justify-content: start;
+            flex-direction: row-reverse;
+        }
+    }
+    // СПИСОК ОСНОВОГО МЕНЮ
+    & ul.list.on {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        @media (max-width: 768px) {
+            flex-direction: column;
+            background-color: rgba(17, 17, 17, 0.24);
+            height: 100px;
+        }
+
+        // ПУНКТЫ МЕНЮ
+        & li.first {
+            display: block;
+            width: 150px;
+            height: 50px;
+            padding-top: 10px;
+            text-align: center;
+            &:hover {
+                outline: 1px solid #eee;
+            }
+            &.black:hover {
+                outline: 1px solid #111;
+            }
+        }
+    }
+
+    // МЕНЮ ВЫБОРА ЗАДНЕГО ФОНА ОТКРЫТОЕ
+    & .background:hover ul.image {
+        display: flex;
+    }
+
+    // СПИСОК МЕНЮ ВЫБОРА ЗАДНЕГО ФОНА ЗАКРЫТОЕ
+    & ul.image {
+        display: none;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        justify-content: start;
+        padding: 10px;
+        margin-top: 17px;
+        outline: 1px solid #eee;
+        background: rgba(17, 17, 17, 0.5);
+        height: 260px;
+        width: 350px;
+        position: relative;
+        z-index: 5;
+
+        li {
+            display: block;
+            width: 100px;
+            height: 70px;
+            margin: 5px;
+            &:hover {
+                outline: 1px solid #eee;
+            }
+            &.black:hover {
+                outline: 1px solid #111;
+            }
+            &.image__1 {
+                background: url(img/background__red.jpg) center/ 120px no-repeat;
+            }
+            &.image__2 {
+                background: url(img/background__orange.jpg) center/ 120px no-repeat;
+            }
+            &.image__3 {
+                background: url(img/background__yellow.jpg) center/ 120px no-repeat;
+            }
+            &.image__4 {
+                background: url(img/background__green.jpg) center/ 120px no-repeat;
+            }
+            &.image__5 {
+                background: url(img/background__blue.jpg) center/ 120px no-repeat;
+            }
+            &.image__6 {
+                background: url(img/background__blue__2.jpg) center/ 120px no-repeat;
+            }
+            &.image__7 {
+                background: url(img/background__purple.jpg) center/ 120px no-repeat;
+            }
+            &.image__8 {
+                background: url(img/background__winxp.jpg) center/ 120px no-repeat;
+            }
+        }
+    }
+
+    // МЕНЮ С ТЕМАМИ
+    & li.theme:hover ul.ul__theme {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 150px;
+        li {
+            display: block;
+            width: 100px;
+            height: 70px;
+            margin: 5px;
+            &:hover {
+                outline: 1px solid #eee;
+            }
+            &.black:hover {
+                outline: 1px solid #111;
+            }
+        }
+
+        .theme__1 {
+            background: url(img/theme_1.JPG) center/cover no-repeat;
+        }
+        .theme__2 {
+            background: url(img/theme_2.JPG) center/cover no-repeat;
+        }
+        .theme__3 {
+            background: url(img/theme_3.JPG) center/cover no-repeat;
+        }
+    }
+
+    // МЕНЮ С ТЕМАМИ ЗАКРЫТОЕ
+    & .ul__theme {
+        display: none;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        justify-content: start;
+        padding: 10px;
+        margin-top: 17px;
+        outline: 1px solid #eee;
+        background: rgba(17, 17, 17, 0.5);
+        height: 260px;
+        width: 350px;
+        position: relative;
+        z-index: 5;
+    }
+
+    // ГЛАВНОЕ МЕНЮ ЗАКРЫТОЕ
+    & ul.list {
+        display: none;
+    }
+    // КНОПКА ВЫЗОВА МЕНЮ
+    &__button {
+        background: url(img/settings.png) right / 30px no-repeat;
+        width: 30px;
+        height: 30px;
+        margin-left: 50px;
+        @media (max-width: 768px) {
+            margin: 0;
+        }
+
+        &:active {
+            transform: scale(0.9);
+        }
+        &.black {
+            background: url(img/settings_black.png) right / 30px no-repeat;
+        }
+    }
+}
+
+.content {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    overflow-x: auto;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+    @media (orientation: portrait) and (max-width: 720px) {
+        flex-direction: column;
+        justify-content: start;
+    }
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+}
+
+.title {
+    margin: 10px;
+    font-size: 50px;
+    @media (max-width: 768px) {
+    }
+}
+.projects {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 352px;
+    height: 350px;
+    padding: 20px;
+    margin: 0 60px 0 0;
+    @media (max-width: 720px) and (orientation: portrait) {
+        margin: 0 0 30px 0;
+        padding: 0;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.block {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+
+    &__link {
+        width: 100px;
+        height: 100px;
+        margin: 2px;
+        overflow: hidden;
+        position: relative;
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        @media (max-width: 768px) {
+            width: 100px;
+            height: 100px;
+        }
+
+        &:hover {
+            outline: 2px solid #eee;
+        }
+        &.black:hover {
+            outline: 2px solid #111;
+        }
+        &:active {
+            transform: scale(0.95);
+            outline: none;
+        }
+
+        & video {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            position: absolute;
+            z-index: 2;
+            @media (max-width: 768px) {
+                width: 100px;
+                height: 100px;
+            }
+        }
+        & img {
+            height: 100px;
+            width: 100px;
+            display: block;
+        }
+        .block__title {
+            width: 100px;
+            height: 100px;
+            background: url(background.jpg) no-repeat fixed;
+            position: absolute;
+            left: 0;
+            top: 0;
+            display: flex;
+            align-items: flex-end;
+            padding: 0 5px;
+            z-index: 0;
+            font-size: 16px;
+            white-space: nowrap;
+            &.red {
+                background: url(img/background__red.jpg) no-repeat;
+                background-size: cover;
+                background-attachment: fixed;
+            }
+            &.orange {
+                background: url(img/background__orange.jpg) no-repeat;
+                background-size: cover;
+                background-attachment: fixed;
+            }
+            &.yellow {
+                background: url(img/background__yellow.jpg) no-repeat;
+                background-size: cover;
+                background-attachment: fixed;
+            }
+            &.green {
+                background: url(img/background__green.jpg) no-repeat;
+                background-size: cover;
+                background-attachment: fixed;
+            }
+            &.blue {
+                background: url(img/background__blue.jpg) no-repeat;
+                background-size: cover;
+                background-attachment: fixed;
+            }
+            &.blue2 {
+                background: url(img/background__blue__2.jpg) no-repeat;
+                background-size: cover;
+                background-attachment: fixed;
+            }
+            &.purple {
+                background: url(img/background__purple.jpg) no-repeat;
+                background-size: cover;
+                background-attachment: fixed;
+            }
+            &.winxp {
+                background: url(img/background__winxp.jpg) no-repeat;
+                background-size: cover;
+                background-attachment: fixed;
+            }
+            &.opposite {
+                background: rgba(0, 153, 25, 0.74);
+                transition: none;
+            }
+            & .background__tile {
+                position: absolute;
+                left: 0;
+                top: 0;
+                z-index: 0;
+                width: 100px;
+                height: 100px;
+                background: url(img/doc.png) center/50px 50px no-repeat;
+
+                &.black {
+                    background: url(img/doc_black.png) center/50px 50px no-repeat;
+                }
+            }
+        }
+        @media (orientation: landscape) {
+            @keyframes anim {
+                0% {
+                    transform: translatey(0);
+                }
+                15% {
+                    transform: translatey(0);
+                }
+                25% {
+                    transform: translatey(-100px);
+                }
+                50% {
+                    transform: translatey(-100px);
+                }
+                60% {
+                    transform: translatey(0);
+                }
+                100% {
+                    transform: translatey(0);
+                }
+            }
+        }
+        @media (max-width: 370px) and (orientation: portrait) {
+            @keyframes anim {
+                0% {
+                    transform: translatey(0);
+                }
+                15% {
+                    transform: translatey(0);
+                }
+                25% {
+                    transform: translatey(-116px);
+                }
+                50% {
+                    transform: translatey(-116px);
+                }
+                60% {
+                    transform: translatey(0);
+                }
+                100% {
+                    transform: translatey(0);
+                }
+            }
+        }
+        @media (min-width: 400px) and (max-width: 560px) and (orientation: portrait) {
+            @keyframes anim {
+                0% {
+                    transform: translatey(0);
+                }
+                15% {
+                    transform: translatey(0);
+                }
+                25% {
+                    transform: translatey(-170px);
+                }
+                50% {
+                    transform: translatey(-170px);
+                }
+                60% {
+                    transform: translatey(0);
+                }
+                100% {
+                    transform: translatey(0);
+                }
+            }
+        }
+        & a {
+            display: block;
+            width: 100%;
+            height: 100%;
+            color: #eee;
+            position: relative;
+            z-index: 3;
+            cursor: default;
+        }
+        &.app {
+            position: relative;
+            z-index: 3;
+            background: url(background.jpg) no-repeat fixed; // rgba(0, 97, 13, 0.856);
+            transition: 0.4s ease 0s;
+            &.red {
+                background: url(img/background__red.jpg) no-repeat;
+                background-size: cover;
+                background-attachment: fixed;
+            }
+            &.orange {
+                background: url(img/background__orange.jpg) no-repeat;
+                background-size: cover;
+                background-attachment: fixed;
+            }
+            &.yellow {
+                background: url(img/background__yellow.jpg) no-repeat;
+                background-size: cover;
+                background-attachment: fixed;
+            }
+            &.green {
+                background: url(img/background__green.jpg) no-repeat;
+                background-size: cover;
+                background-attachment: fixed;
+            }
+            &.blue {
+                background: url(img/background__blue.jpg) no-repeat;
+                background-size: cover;
+                background-attachment: fixed;
+            }
+            &.blue2 {
+                background: url(img/background__blue__2.jpg) no-repeat;
+                background-size: cover;
+                background-attachment: fixed;
+            }
+            &.purple {
+                background: url(img/background__purple.jpg) no-repeat;
+                background-size: cover;
+                background-attachment: fixed;
+            }
+            &.winxp {
+                background: url(img/background__winxp.jpg) no-repeat;
+                background-size: cover;
+                background-attachment: fixed;
+            }
+            &.opposite {
+                background: rgba(0, 153, 25, 0.74);
+                transition: none;
+            }
+            & .background__tile {
+                position: absolute;
+                left: 0;
+                top: 0;
+                z-index: 0;
+                width: 100px;
+                height: 100px;
+                background: url(img/timer.png) center/50px 60px no-repeat;
+
+                &.black {
+                    background: url(img/timer_black.png) center/50px 60px no-repeat;
+                }
+            }
+        }
+        &.app.active {
+            height: 204px;
+            width: 204px;
+            transition: 0.4s ease 0s;
+            &.opposite {
+                background: rgba(0, 153, 25, 0.74);
+            }
+            & .background__tile {
+                background: none;
+            }
+        }
+    }
+
+    & .wide {
+        width: 204px;
+        height: 100px;
+        @media (max-width: 768px) {
+            width: 204px;
+            height: 100px;
+        }
+
+        & img,
+        video {
+            width: 204px;
+            height: 100px;
+            @media (max-width: 768px) {
+                width: 204px;
+                height: 100px;
+            }
+        }
+        .block__title {
+            width: 204px;
+            height: 100px;
+            background: url(background.jpg) no-repeat fixed; // rgba(0, 97, 13, 0.856);
+            position: absolute;
+            left: 0;
+            top: 0;
+            display: flex;
+            align-items: flex-end;
+            padding: 0 5px;
+            z-index: 0;
+            &.red {
+                background: url(img/background__red.jpg) no-repeat;
+                background-size: cover;
+                background-attachment: fixed;
+            }
+            &.orange {
+                background: url(img/background__orange.jpg) no-repeat;
+                background-size: cover;
+                background-attachment: fixed;
+            }
+            &.yellow {
+                background: url(img/background__yellow.jpg) no-repeat;
+                background-size: cover;
+                background-attachment: fixed;
+            }
+            &.green {
+                background: url(img/background__green.jpg) no-repeat;
+                background-size: cover;
+                background-attachment: fixed;
+            }
+            &.blue {
+                background: url(img/background__blue.jpg) no-repeat;
+                background-size: cover;
+                background-attachment: fixed;
+            }
+            &.blue2 {
+                background: url(img/background__blue__2.jpg) no-repeat;
+                background-size: cover;
+                background-attachment: fixed;
+            }
+            &.purple {
+                background: url(img/background__purple.jpg) no-repeat;
+                background-size: cover;
+                background-attachment: fixed;
+            }
+            &.winxp {
+                background: url(img/background__winxp.jpg) no-repeat;
+                background-size: cover;
+                background-attachment: fixed;
+            }
+
+            &.opposite {
+                background: rgba(0, 153, 25, 0.74);
+                transition: none;
+            }
+            & .background__tile {
+                position: absolute;
+                left: 0;
+                top: 0;
+                z-index: 0;
+                width: 204px;
+                height: 100px;
+                background: url(img/doc.png) center/50px 50px no-repeat;
+                @media (orientation: portrait) {
+                    background: url(img/doc.png) right/50px 50px no-repeat;
+                }
+
+                &.black {
+                    background: url(img/doc_black.png) center/50px 50px no-repeat;
+                    @media (orientation: portrait) {
+                        background: url(img/doc_black.png) right/50px 50px no-repeat;
+                    }
+                }
+            }
+        }
+        &.app {
+            position: relative;
+            z-index: 3;
+            background: url(background.jpg) no-repeat fixed; // rgba(0, 97, 13, 0.856);
+            transition: 0.4s ease 0s;
+            &.red {
+                background: url(img/background__red.jpg) no-repeat;
+                background-size: cover;
+                background-attachment: fixed;
+            }
+            &.orange {
+                background: url(img/background__orange.jpg) no-repeat;
+                background-size: cover;
+                background-attachment: fixed;
+            }
+            &.yellow {
+                background: url(img/background__yellow.jpg) no-repeat;
+                background-size: cover;
+                background-attachment: fixed;
+            }
+            &.green {
+                background: url(img/background__green.jpg) no-repeat;
+                background-size: cover;
+                background-attachment: fixed;
+            }
+            &.blue {
+                background: url(img/background__blue.jpg) no-repeat;
+                background-size: cover;
+                background-attachment: fixed;
+            }
+            &.blue2 {
+                background: url(img/background__blue__2.jpg) no-repeat;
+                background-size: cover;
+                background-attachment: fixed;
+            }
+            &.purple {
+                background: url(img/background__purple.jpg) no-repeat;
+                background-size: cover;
+                background-attachment: fixed;
+            }
+            &.winxp {
+                background: url(img/background__winxp.jpg) no-repeat;
+                background-size: cover;
+                background-attachment: fixed;
+            }
+            &.opposite {
+                background: rgba(0, 153, 25, 0.74);
+                transition: none;
+            }
+            & .background__tile {
+                position: absolute;
+                left: 0;
+                top: 0;
+                z-index: 0;
+                width: 204px;
+                height: 100px;
+                background: url(img/timer.png) center/50px 60px no-repeat;
+                @media (orientation: portrait) {
+                    background: url(img/timer.png) right/50px 60px no-repeat;
+                }
+
+                &.black {
+                    background: url(img/timer_black.png) center/50px 60px no-repeat;
+                    @media (orientation: portrait) {
+                        background: url(img/timer_black.png) right/50px 60px no-repeat;
+                    }
+                }
+            }
+        }
+        &.app.active {
+            height: 204px;
+            transition: 0.4s ease 0s;
+            &.opposite {
+                background: rgba(0, 153, 25, 0.74);
+            }
+            & .background__tile {
+                background: none;
+            }
+        }
+    }
+
+    .footer {
+    }
+}
+.load {
+    display: inline;
+    border: 5px solid #eee;
+    border-radius: 50%;
+    border-top: 5px solid rgba(0, 0, 0, 0);
+    width: 50px;
+    height: 50px;
+    margin: 30px 40px;
+    animation: spin 0.8s linear infinite;
+    position: absolute;
+    z-index: 0;
+}
+//часы цифровые
+.clock__digital {
+    width: 204px;
+    height: 100px;
+    background: url(background.jpg) no-repeat fixed; // rgba(0, 97, 13, 0.856);
+    color: #eee;
+    font-size: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: anim 15s infinite ease;
+    &.opposite {
+        background: rgba(0, 153, 25, 0.74);
+    }
+    &.black {
+        color: #111;
+    }
+}
+//часы стрелочные
+.clock__analog {
+    width: 90px;
+    height: 90px;
+    margin: 10px 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #eee;
+    border-radius: 50%;
+    animation: anim 15s infinite ease;
+    &.black {
+        border: 2px solid #111;
+    }
+}
+
+.clock__analog:before {
+    content: "";
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    background-color: #eee;
+    border-radius: 50%;
+    z-index: 999;
+}
+.clock__analog.black::before {
+    background-color: #111;
+}
+
+.clock__analog .hour,
+.clock__analog .min {
+    position: absolute;
+}
+
+.clock__analog .hour,
+.hr {
+    width: 50px;
+    height: 50px;
+}
+.clock__analog .min,
+.mn {
+    width: 70px;
+    height: 70px;
+}
+
+.hr,
+.mn {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    border-radius: 50%;
+}
+
+.hr:before {
+    content: "";
+    position: absolute;
+    width: 4px;
+    height: 25px;
+    background-color: #eee;
+    z-index: 10;
+    border-radius: 6px 6px 0 0;
+}
+.hr.black:before {
+    background-color: #111;
+}
+.mn:before {
+    content: "";
+    position: absolute;
+    width: 2px;
+    height: 35px;
+    background-color: #eee;
+    z-index: 11;
+    border-radius: 6px 6px 0 0;
+}
+.mn.black::before {
+    background-color: #111;
+}
+
+.block__link.wide.watch {
+    width: 204px;
+    height: 100px;
+    position: relative;
+}
+.animation {
+    width: 204px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+}
+
+//анимация плиток
+.anim_1 {
+    animation: anim ease 15s infinite;
+}
+.anim_2 {
+    animation: anim ease 18s infinite;
+}
+.anim_3 {
+    animation: anim ease 23s infinite;
+}
+.anim_4 {
+    animation: anim ease 20s infinite;
+}
+.anim_5 {
+    animation: anim ease 24s infinite;
+}
+.anim_6 {
+    animation: anim ease 19s infinite;
+}
+.anim_7 {
+    animation: anim ease 25s infinite;
+}
+.anim_8 {
+    animation: anim ease 28s infinite;
+}
+.anim_9 {
+    animation: anim ease 12s infinite;
+}
+.anim_10 {
+    animation: anim ease 22s infinite;
+}
+
+//ОБОИ
+.red {
+    background: url(img/background__red.jpg) no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+.orange {
+    background: url(img/background__orange.jpg) no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+.yellow {
+    background: url(img/background__yellow.jpg) no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+.green {
+    background: url(img/background__green.jpg) no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+.blue {
+    background: url(img/background__blue.jpg) no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+.blue2 {
+    background: url(img/background__blue__2.jpg) no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+.purple {
+    background: url(img/background__purple.jpg) no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+.winxp {
+    background: url(img/background__winxp.jpg) no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
