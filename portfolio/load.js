@@ -1,10 +1,6 @@
-
-
+const load = document.querySelectorAll('.load')
 window.onload = function () {
-    $(document).ready(function () {
-        $('.load').css({
-            'display': 'none',
-        });
-    })
-
-};
+    for (let i = 0; i < load.length; i++) {
+        load[i].style.display = 'none'
+    }
+}

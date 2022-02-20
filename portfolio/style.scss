@@ -719,6 +719,7 @@ body {
     .footer {
     }
 }
+
 .load {
     display: inline;
     border: 5px solid #eee;
@@ -737,7 +738,7 @@ body {
     height: 100px;
     background: url(background.jpg) no-repeat fixed; // rgba(0, 97, 13, 0.856);
     color: #eee;
-    font-size: 40px;
+    font-size: 60px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -914,4 +915,12 @@ body {
     background: url(img/background__winxp.jpg) no-repeat;
     background-size: cover;
     background-attachment: fixed;
+}
+.background__tile__calc {
+    background: url(site_12.JPG);
+}
+img.calc {
+    width: 50px;
+    display: block;
+    margin: 0 auto;
 }

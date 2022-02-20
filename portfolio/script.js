@@ -221,7 +221,7 @@ var myVar = setInterval(function () {
 
 function myTimer() {
     var d = new Date();
-    document.getElementById("cd").innerHTML = d.toLocaleString();
+    document.getElementById("cd").innerHTML = d.getHours() + ':' + d.getMinutes()
 }
 
 const deg = 6;
@@ -238,3 +238,14 @@ setInterval(() => {
     mn.style.transform = `rotateZ(${mm}deg)`;
 
 })
+
+let date = new Date()
+if (Number(date.getHours()) < 6) {
+    document.querySelector('h1').innerHTML = 'Good night! Start'
+} else if (Number(date.getHours()) < 12) {
+    document.querySelector('h1').innerHTML = 'Good morning! Start'
+} else if (Number(date.getHours()) < 18) {
+    document.querySelector('h1').innerHTML = 'Good day! Start'
+} else {
+    document.querySelector('h1').innerHTML = 'Good evening! Start'
+}
